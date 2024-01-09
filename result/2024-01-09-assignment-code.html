@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>20240109 실습</title>
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <style>
+        #loginDiv{
+
+            position: absolute;
+
+            width: 350px;
+            height: 140px;
+            border-radius: 5px;
+            border: solid 1px #DBDBDB;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            gap: 16px;
+        }
+        #loginDivTop{
+            width: 318px;
+            height: fit-content;
+        }
+        #loginBtnDiv{
+            width: 318px;
+            height: 40px;
+            background-color: #711bff;
+            border-radius: 4px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+        }
+        #loginDivBottom{
+            width: 318px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        #loginDivBottom > div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            gap: 3px;
+
+            color: #767676;
+        }
+
+        span{
+            font-size: 12px;
+            font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+        }
+    </style>
+</head>
+<body>
+    <div id="loginDiv">
+        <div id="loginDivTop">
+            <span>더 편리해진 위니브에 오신 것을 환영합니다.</span>
+        </div>
+        <div id="loginBtnDiv">
+            <img src="image/weniv-logo.png">
+            <span>로그인</span>
+        </div>
+        <div id="loginDivBottom">
+            <div id="find">
+                <img src="image/icon-lock.png">
+                <span>아이디</span>
+                <span>|</span>
+                <span>비밀번호찾기</span>
+            </div>
+            <div id="register">
+                <img src="image/icon-user.png">
+                <span>회원가입</span>
+            </div>
+        </div>
+    </div>
+    <img style="opacity: 0.1" src="image/log-in-area.png">
+</body>
+</html>
