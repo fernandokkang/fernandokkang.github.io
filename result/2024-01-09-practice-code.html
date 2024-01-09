@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .wrap, .wrap > div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left_side, .center{
+      flex-direction: column;
+    }
+    .right_side {
+      flex-direction: column-reverse;
+    }
+    .green{
+      background-color: green;
+    }
+    .blue{
+      background-color: blue;
+    }
+    .yellow{
+      background-color: yellow;
+    }
+
+  </style>
+</head>
+<body>
+  <article class="wrap">
+      <div class="left_side">
+          <div class="blue">a</div>
+          <div class="green">b</div>
+          <div class="yellow">c</div>
+      </div>
+      <div class="center">
+          <div class="blue">d</div>
+          <div class="yellow">e</div>
+      </div>
+      <div class="right_side">
+          <div class="blue">f</div>
+          <div class="green">g</div>
+          <div class="yellow">h</div>
+      </div>
+  </article>
+</body>
+</html>
