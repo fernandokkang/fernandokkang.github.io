@@ -11,10 +11,15 @@
       font-weight: normal;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'GmarketSansBold';
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'OTEnjoystoriesBA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
       font-weight: normal;
       font-style: normal;
     }
@@ -141,6 +146,52 @@
       text-align: center;
       font: 12px Noto Sans Korean;
     }
+    #modal{
+      position: absolute;
+      top: 35%;
+
+      width: 800px;
+      height: 800px;
+
+      border-radius: 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: white;
+
+       visibility: hidden;
+    }
+    #modal > *{
+      background-color: white;
+      color: #5B2386;
+    }
+    #modal > span:first-child {
+
+      font: 96px OTEnjoystoriesBA;
+    }
+    #modal > span:nth-child(2) {
+
+      font: 36px OTEnjoystoriesBA;
+    }
+    #modal > img {
+      padding-top: 30px;
+      padding-bottom: 75px;
+    }
+    #modal > button {
+
+      width: 508px;
+      height: 70px;
+
+      border-radius: 56px;
+
+      color: #5B2386;
+      background-color: #FCEE21;
+
+      font: 24px GmarketSansBold;
+    }
   </style>
 </head>
 <body>
@@ -182,6 +233,14 @@
       공유하기
     </button>
   </div>
+  <div id="modal" class="modal">
+    <span class="modal-header">화이팅!!♥♥♥</span>
+    <span>당신의 꿈을 응원합니다!</span>
+    <img class="modalImg" src="image/240111/assignment/라이캣.png">
+    <button>
+      종료하고 진짜 훈련하러 가기 GO!GO!
+    </button>
+  </div>
   <footer>
     <div class="logoDiv">
       <img class="logoImg" src="image/240111/assignment/위니브.png">
@@ -195,9 +254,13 @@
 
   const UNIT_TIME = 10000;
 
+  const frame = document.querySelector('.frame');
+
   const calculateBtn = document.querySelector('.calculateBtn');
   const trainingBtn = document.querySelector('.trainingBtn');
   const shareBtn = document.querySelector('.shareBtn');
+
+  const modal = document.querySelector('#modal');
 
   const job = document.querySelector('#job');
   const time = document.querySelector('#time');
@@ -219,6 +282,10 @@
     if(validator(trainingDays)) {
       setResult(job.value, trainingDays);
     }
+  });
+
+  trainingBtn.addEventListener('click', function (){
+    modal.style.visibility = 'visible';
   });
 
   function validator(trainingDays) {
