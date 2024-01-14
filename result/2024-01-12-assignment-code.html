@@ -193,6 +193,8 @@
 </body>
 <script>
 
+  const UNIT_TIME = 10000;
+
   const calculateBtn = document.querySelector('.calculateBtn');
   const trainingBtn = document.querySelector('.trainingBtn');
   const shareBtn = document.querySelector('.shareBtn');
@@ -200,12 +202,12 @@
   const job = document.querySelector('#job');
   const time = document.querySelector('#time');
 
-  job.addEventListener('click', function (){
+  job.addEventListener('focus', function (){
     job.value = null;
     job.style.color = "black";
   });
 
-  time.addEventListener('click', function (){
+  time.addEventListener('focus', function (){
     time.value = null;
     time.style.color = "black";
   });
@@ -214,13 +216,18 @@
 
     const trainingDays = calculateTrainingDays(time.value);
 
-    if(!isNaN(trainingDays)) {
+    if(validator(trainingDays)) {
       setResult(job.value, trainingDays);
     }
   });
 
+  function validator(trainingDays) {
+
+    return !isNaN(trainingDays) && isFinite(trainingDays);
+  }
+
   function calculateTrainingDays(time) {
-    return Math.ceil(10000/time);
+    return Math.ceil(UNIT_TIME/time);
   }
 
   function setResult(job, trainingDays) {
