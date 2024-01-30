@@ -7,9 +7,8 @@ toc: true
 ---
 
 ### 에러 내용
-
 ```
-  Liquid Exception: Liquid syntax error (line 10): Variable '{{1, 2, 3}' was not properly terminated with regexp: /\}\}/ in /github/workspace/_posts/2024-01-30-240130DailyQuiz.md
+  Liquid Exception: Liquid syntax error (line 10): Variable '{ {1, 2, 3}' was not properly terminated with regexp: /\}\}/ in /github/workspace/_posts/2024-01-30-240130DailyQuiz.md
 ```
 
 ### 에러 원인
